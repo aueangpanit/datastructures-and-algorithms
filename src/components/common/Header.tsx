@@ -17,16 +17,13 @@ const resources = ["Dashboard", "Posts", "Projects", "About"]
 
 export const Header: React.FC<EmptyProps> = () => {
   return (
-    <Popover className="sticky top-0 z-10 bg-skin-header backdrop-blur-md backdrop-saturate-150 bg-opacity-70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <Popover className="sticky top-0 z-10">
+      <div className="px-8 lg:px-24">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link
-              to="/"
-              className="rounded-md text-skin-header-fg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-skin-focus"
-            >
+            <Link to="/" className="text-lg font-medium">
               <span className="sr-only">Home</span>
-              <HomeIcon className="h-8 w-auto" />
+              D&AL
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -37,11 +34,7 @@ export const Header: React.FC<EmptyProps> = () => {
           </div>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
             {resources.map(item => (
-              <Link
-                to="/"
-                key={item}
-                className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
-              >
+              <Link to="/" key={item} className="whitespace-nowrap text-lg">
                 {item}
               </Link>
             ))}

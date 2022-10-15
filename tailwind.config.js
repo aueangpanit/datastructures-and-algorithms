@@ -1,3 +1,4 @@
+const { borderRadius } = require("tailwindcss/defaultTheme")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 function withOpacity(variableName) {
@@ -55,27 +56,25 @@ module.exports = {
               fontWeight: "700",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.fg"),
-              fontFamily: "Exo",
             },
             h2: {
               fontWeight: "700",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.fg"),
-              fontFamily: "Exo",
             },
             h3: {
               fontWeight: "700",
-              fontFamily: "Exo",
               color: theme("colors.fg"),
             },
             "h4,h5,h6": {
-              fontFamily: "Exo",
               fontWeight: "600",
               color: theme("colors.fg"),
             },
-            code: {
-              color: theme("colors.bg"),
-              backgroundColor: theme("colors.focus"),
+            pre: {
+              color: `${theme("colors.fg")} !important`,
+              backgroundColor: `${theme("colors.bg")} !important`,
+              border: `1px solid ${theme("colors.fg")}`,
+              borderRadius: "0px !important",
             },
             details: {
               backgroundColor: theme("colors.bg"),
@@ -98,9 +97,10 @@ module.exports = {
               },
             },
             blockquote: {
-              fontSize: "1.5rem",
+              fontWeight: "400",
               color: theme("colors.fg"),
               borderLeftColor: theme("colors.fg-muted"),
+              borderLeft: "1px solid",
             },
           },
         },
@@ -109,10 +109,6 @@ module.exports = {
       boxShadow: {
         button: "6px 6px 13px #70ad13, -6px -6px 13px #98eb19",
         light: "6px 6px 13px #059bb4, -6px -6px 13px #07d1f4",
-      },
-      fontFamily: {
-        exo: ["Exo", ...defaultTheme.fontFamily.sans],
-        yrsa: ["Yrsa", ...defaultTheme.fontFamily.sans],
       },
       gridTemplateColumns: {
         blog: "1fr min(600px, 100%) 1fr",

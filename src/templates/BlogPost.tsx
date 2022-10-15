@@ -22,18 +22,21 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article itemScope itemType="http://schema.org/Article">
-        <header className="grid grid-cols-blog">
+        <header>
           <h1
             className="col-start-2 font-black text-skin-fg text-4xl md:text-6xl"
             itemProp="headline"
           >
             {post.frontmatter.title}
           </h1>
-          <p className="col-start-2 text-skin-fg text-xl">
+          <p className="col-start-2 text-xl text-skin-fg-muted">
             {post.frontmatter.date}
           </p>
         </header>
-        <section itemProp="articleBody" className="prose prose-xl mt-8 mx-auto">
+        <section
+          itemProp="articleBody"
+          className="prose lg:prose-xl text-skin-fg mt-4"
+        >
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
       </article>

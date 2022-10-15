@@ -1,8 +1,9 @@
-/* eslint-disable */
 import React from "react"
-import { Location } from "@reach/router"
-import { MDXProvider } from "@mdx-js/react"
+
+/* eslint-disable */
 import components from "@/components/mdx"
+import { MDXProvider } from "@mdx-js/react"
+import { Location } from "@reach/router"
 
 const App = ({ element, location }) => {
   return <MDXProvider {...{ components }}>{element}</MDXProvider>

@@ -17,7 +17,7 @@ export const SweepingAnimationWrapper: React.FC<SweepingAnimationWrapper> = ({
 
   return (
     <div
-      className={`${visible ? "max-w-xl" : "max-w-0"} ${
+      className={`${visible ? "max-w-2xl" : "max-w-0"} ${
         timingFunction === "linear" && "duration-1000 ease-linear"
       } transition-all delay-300 overflow-hidden`}
     >
