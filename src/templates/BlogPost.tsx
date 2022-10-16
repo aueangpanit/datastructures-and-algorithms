@@ -6,6 +6,10 @@ import {
 } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import {
+  FadeInAnimationWrapper,
+  SweepingAnimationWrapper,
+} from "@/components/animations"
 import { PageProps } from "@/definitions"
 
 import { Seo } from "../components/common"
@@ -22,23 +26,29 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article itemScope itemType="http://schema.org/Article">
-        <header>
-          <h1
-            className="col-start-2 font-black text-skin-fg text-4xl md:text-6xl"
-            itemProp="headline"
+        <SweepingAnimationWrapper timingFunction="linear">
+          <header>
+            <h1
+              className="col-start-2 font-black text-skin-fg text-4xl md:text-6xl"
+              itemProp="headline"
+            >
+              {post.frontmatter.title}
+            </h1>
+            <FadeInAnimationWrapper>
+              <p className="col-start-2 text-xl text-skin-fg-muted">
+                {post.frontmatter.date}
+              </p>
+            </FadeInAnimationWrapper>
+          </header>
+        </SweepingAnimationWrapper>
+        <FadeInAnimationWrapper>
+          <section
+            itemProp="articleBody"
+            className="prose lg:prose-xl text-skin-fg mt-4"
           >
-            {post.frontmatter.title}
-          </h1>
-          <p className="col-start-2 text-xl text-skin-fg-muted">
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section
-          itemProp="articleBody"
-          className="prose lg:prose-xl text-skin-fg mt-4"
-        >
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
+        </FadeInAnimationWrapper>
       </article>
       <nav className="mt-8 grid grid-cols-blog">
         <ul className="col-start-2 text-lg flex flex-wrap justify-between">

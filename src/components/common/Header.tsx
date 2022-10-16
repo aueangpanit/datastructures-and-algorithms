@@ -13,6 +13,8 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 
+import { Button } from "./Button"
+
 const resources = ["Dashboard", "Posts", "Projects", "About"]
 
 export const Header: React.FC<EmptyProps> = () => {
@@ -21,10 +23,12 @@ export const Header: React.FC<EmptyProps> = () => {
       <div className="px-8 lg:px-24">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/" className="text-lg font-medium">
-              <span className="sr-only">Home</span>
-              D&AL
-            </Link>
+            <Button>
+              <Link to="/" className="text-lg font-medium">
+                <span className="sr-only">Home</span>
+                D&AL
+              </Link>{" "}
+            </Button>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-skin-focus">
@@ -32,11 +36,13 @@ export const Header: React.FC<EmptyProps> = () => {
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
+          <div className="hidden md:flex items-center md:flex-1 lg:w-0 space-x-8">
             {resources.map(item => (
-              <Link to="/" key={item} className="whitespace-nowrap text-lg">
-                {item}
-              </Link>
+              <Button>
+                <Link to="/" className="whitespace-nowrap text-lg">
+                  {item}
+                </Link>
+              </Button>
             ))}
           </div>
         </div>
@@ -58,13 +64,15 @@ export const Header: React.FC<EmptyProps> = () => {
           <div className="rounded-lg shadow-lg ring-1 ring-skin-header ring-opacity-5 bg-skin-header text-skin-header-fg border divide-y-2 divide-skin-header-muted">
             <div className="pt-5 pb-6 px-5">
               <div className="z-50 flex items-center justify-between">
-                <Link
-                  to="/"
-                  className="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-skin-focus"
-                >
-                  <span className="sr-only">Home</span>
-                  <HomeIcon className="h-8 w-auto" />
-                </Link>
+                <Button>
+                  <Link
+                    to="/"
+                    className="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-skin-focus"
+                  >
+                    <span className="sr-only">Home</span>
+                    <HomeIcon className="h-8 w-auto" />
+                  </Link>
+                </Button>
                 <div className="-mr-2">
                   <Popover.Button className="bg-skin-header rounded-md p-2 inline-flex items-center justify-center text-skin-header-fg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-skin-focus">
                     <span className="sr-only">Close menu</span>

@@ -3,7 +3,7 @@
     "module": "commonjs",
     "target": "esnext",
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "noEmit": true,
